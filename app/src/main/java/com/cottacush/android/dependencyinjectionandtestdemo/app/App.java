@@ -1,9 +1,9 @@
-package com.example.oyeleke.dependencyinjectionandtestdemo.app;
+package com.cottacush.android.dependencyinjectionandtestdemo.app;
 
 
 import android.app.Application;
 
-import com.example.oyeleke.dependencyinjectionandtestdemo.login.LoginModule;
+import com.cottacush.android.dependencyinjectionandtestdemo.login.LoginModule;
 
 public class App extends Application {
 

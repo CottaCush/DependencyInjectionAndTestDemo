@@ -1,5 +1,4 @@
-package com.example.oyeleke.dependencyinjectionandtestdemo.login;
-
+package com.cottacush.android.dependencyinjectionandtestdemo.login;
 
 import android.support.annotation.Nullable;
 

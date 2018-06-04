@@ -1,19 +1,18 @@
-package com.example.oyeleke.dependencyinjectionandtestdemo.login;
+package com.cottacush.android.dependencyinjectionandtestdemo.login;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.oyeleke.dependencyinjectionandtestdemo.R;
-import com.example.oyeleke.dependencyinjectionandtestdemo.app.App;
+import com.cottacush.android.dependencyinjectionandtestdemo.R;
+import com.cottacush.android.dependencyinjectionandtestdemo.app.App;
 
 import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity implements LoginActivityMVP.View {
 
@@ -24,8 +23,6 @@ public class MainActivity extends AppCompatActivity implements LoginActivityMVP.
     EditText fnameEditText;
     @BindView(R.id.lname)
     EditText lnameEditText;
-    @BindView(R.id.save_button)
-    Button saveButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +30,6 @@ public class MainActivity extends AppCompatActivity implements LoginActivityMVP.
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         ((App)getApplication()).getComponent().inject(this);
-
-        saveButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
     }
 
     @Override
@@ -82,4 +72,7 @@ public class MainActivity extends AppCompatActivity implements LoginActivityMVP.
     public void setLastName(String lname) {
         lnameEditText.setText(lname);
     }
+
+    @OnClick(R.id.save_button)
+    public void saveInput() {}
 }

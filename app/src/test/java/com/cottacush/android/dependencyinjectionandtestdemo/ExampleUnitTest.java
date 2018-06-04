@@ -1,4 +1,4 @@
-package com.example.oyeleke.dependencyinjectionandtestdemo;
+package com.cottacush.android.dependencyinjectionandtestdemo;
 
 import org.junit.Test;
 

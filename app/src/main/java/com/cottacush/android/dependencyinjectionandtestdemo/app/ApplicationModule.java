@@ -1,4 +1,4 @@
-package com.example.oyeleke.dependencyinjectionandtestdemo.app;
+package com.cottacush.android.dependencyinjectionandtestdemo.app;
 
 import android.app.Application;
 import android.content.Context;

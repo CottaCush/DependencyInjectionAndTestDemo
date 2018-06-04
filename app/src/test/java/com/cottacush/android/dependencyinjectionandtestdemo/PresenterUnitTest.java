@@ -1,9 +1,9 @@
-package com.example.oyeleke.dependencyinjectionandtestdemo;
+package com.cottacush.android.dependencyinjectionandtestdemo;
 
 
-import com.example.oyeleke.dependencyinjectionandtestdemo.login.LoginActivityMVP;
-import com.example.oyeleke.dependencyinjectionandtestdemo.login.LoginActivityPresenter;
-import com.example.oyeleke.dependencyinjectionandtestdemo.login.User;
+import com.cottacush.android.dependencyinjectionandtestdemo.login.LoginActivityMVP;
+import com.cottacush.android.dependencyinjectionandtestdemo.login.LoginActivityPresenter;
+import com.cottacush.android.dependencyinjectionandtestdemo.login.User;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -12,7 +12,6 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.verifyZeroInteractions;
 import static org.mockito.Mockito.when;
 
 public class PresenterUnitTest {
@@ -32,13 +31,6 @@ public class PresenterUnitTest {
         presenter.setView(mockView);
     }
 
-    //test to ensure that when a null user value is changed no interaction takes place in the view
-//    @Test
-//    public void noInteractionWithView(){
-//        presenter.getCurrentUser();
-//
-//        verifyZeroInteractions(mockLoginModel);
-//    }
 
     @Test
     public void loadUserFromRepositoryWhenValidUserIsPresent(){
@@ -48,8 +40,6 @@ public class PresenterUnitTest {
 
         //verify model interactions
         verify(mockLoginModel, times(1)).getUser();
-        //test fails if the model is called more than once
-       // verify(mockLoginModel, times(2)).getUser();
 
         //verify view interactions
         verify(mockView, times(1)).setFirstName("Fox");
@@ -64,7 +54,6 @@ public class PresenterUnitTest {
         presenter.getCurrentUser();
 
         verify(mockLoginModel, times(1)).getUser();
-
 
         //verify view interactions
         verify(mockView, never()).setFirstName("Fox");
@@ -92,7 +81,6 @@ public class PresenterUnitTest {
         verify(mockView, times(2)).getFirstName(); // called twice now
         verify(mockView,times(1)).getLastName();
         verify(mockView,times(2)).showInputError(); // called twice now
-
     }
 
     @Test
